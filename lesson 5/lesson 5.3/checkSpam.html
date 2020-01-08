@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Check spam</title>
+</head>
+<body>
+  <script>
+    function checkSpam(str) {
+      if(str.toLowerCase().includes("viagra") || str.toUpperCase().includes("XXX")) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    //let lowerStr = str.toLowerCase();
+    //return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+
+    alert(checkSpam('buy ViAgRA now'));
+    alert(checkSpam('free xxxxx'));
+    alert(checkSpam("innocent rabbit"));
+  </script>
+</body>
+</html>
