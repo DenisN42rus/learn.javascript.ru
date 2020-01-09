@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sum input</title>
+</head>
+<body>
+  <script>
+    function sumInput() {
+      let numbers = [],
+          result = 0,
+          num;
+      
+      while(true) {
+        num = prompt("Введите число", "");
+        
+        if((num === null || num === '' || !isFinite(num))) break;
+      
+        numbers.push(+num);
+      } 
+      
+      for(let number of numbers) {
+          result += number;
+      }
+      return result;
+    }
+
+    alert(sumInput());
+  </script>
+</body>
+</html>
