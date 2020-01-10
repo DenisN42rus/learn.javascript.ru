@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Camelize</title>
+</head>
+<body>
+  <script>
+    function camelize(str) {
+      let arr = str.split('-');
+      
+      arr = arr.map((item, i) => {
+        if(i > 0) {
+          return item[0].toUpperCase() + item.slice(1);
+        } else {
+          return item;
+        }
+      });
+      return arr.join('');
+
+      // return str.split('-')
+      //           .map((item, i) => index == 0 ? item : item[0].toUpperCase() + item.slice(1))
+      //           .join('');
+    }
+
+    alert(camelize("background-color"));
+    alert(camelize("list-style-image"));
+    
+    
+  </script>
+</body>
+</html>
