@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Filter range</title>
+</head>
+<body>
+  <script>
+    function filterRange(arr, a, b) {
+      return arr.filter(item => {
+        return (item >= a && item <= b);        
+      })
+    }
+
+    let arr = [5, 3, 8, 1];
+
+    let filtered = filterRange(arr, 1, 4);
+
+    alert(arr);
+    alert(filtered);
+  </script>
+</body>
+</html>
