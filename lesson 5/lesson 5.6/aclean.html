@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aclean</title>
+</head>
+<body>
+  <script>
+    let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+    function aclean(arr) {
+      let map = new Map();
+      arr.forEach(item => {
+        let word = item.toLowerCase().split('').sort().join('');
+        map.set(word, item);
+      });
+    
+      return Array.from(map.values());
+    }
+
+    alert( aclean(arr) );
+  </script>
+</body>
+</html>
