@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Messages</title>
+</head>
+<body>
+  <script>
+    let messages = [
+      {text: "Hello", from: "John"},
+      {text: "How goes?", from: "John"},
+      {text: "See you soon", from: "Alice"}
+    ];
+
+    readMessages = new WeakMap();
+
+    readMessages.set(messages[1], 'Date');
+
+    alert("Read message 0: " + readMessages.has(messages[0])); 
+    alert("Read message 1: " + readMessages.has(messages[1])); 
+  </script>
+</body>
+</html>
