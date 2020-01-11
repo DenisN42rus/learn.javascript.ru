@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculator</title>
+</head>
+<body>
+  <script>
+    function Calculator() {
+      this.calculate = function(str) {
+        let arr = str.split(' ')
+        this.a = +arr[0];
+        this.op = arr[1];
+        this.b = +arr[2];
+
+        if (!this[this.op] || isNaN(this.a) || isNaN(this.b)) {
+          return NaN;
+        }
+
+        return this[this.op]();
+      }
+      this['+'] = function() {
+        return this.a + this.b;
+      }
+      this['-'] = function() {
+        return this.a - this.b;
+      }
+      this.addMethod = function(name, func) {
+        this[name] = function() {
+          return func(this.a, this.b);
+        }
+      }
+    }
+
+    let calc = new Calculator;
+    
+    alert( calc.calculate("3 + 7") );
+    alert( calc.calculate("13 - 6") );
+    alert( calc.calculate("13 % 6") );
+
+    let powerCalc = new Calculator;
+    powerCalc.addMethod("*", (a, b) => a * b);
+    powerCalc.addMethod("/", (a, b) => a / b);
+    powerCalc.addMethod("**", (a, b) => a ** b);
+
+    let result = powerCalc.calculate("2 * 3");
+    let result1 = powerCalc.calculate("4 / 2");
+    let result2 = powerCalc.calculate("2 ** 3");
+    alert( result );
+    alert( result1 );
+    alert( result2 );
+  </script>
+</body>
+</html>
