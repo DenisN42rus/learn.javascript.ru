@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Get local day</title>
+</head>
+<body>
+  <script>
+    let date = new Date(2012, 0, 8);
+
+    function getLocalDay(date) {
+      if(date.getDay() == 0) return 7;
+
+      return date.getDay();
+    }
+
+    alert( getLocalDay(date) );
+  </script>
+</body>
+</html>
