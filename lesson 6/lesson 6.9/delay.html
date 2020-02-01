@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Delay</title>
+</head>
+<body>
+  <script>
+  function f(x) {
+    alert(x);
+  }
+
+  function delay(f, delay) {
+    return function() {
+      setTimeout(() => f.apply(this, arguments), delay)
+    };
+  }
+
+  // создаём обёртки
+  let f1000 = delay(f, 1000);
+  let f1500 = delay(f, 1500);
+
+  f1000("test"); // показывает "test" после 1000 мс
+  f1500("test"); // показывает "test" после 1500 мс
+  </script>
+</body>
+</html>
